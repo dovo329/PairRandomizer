@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="c7A-Sg-CH1">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <scenes>
+        <!--RandomPair-->
+        <scene sceneID="gGH-5V-TI7">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6od-gC-ruj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="MSQ-EZ-QWM" userLabel="RandomPairDataSource" customClass="RandomPairDataSource" customModule="PairRandomizer" customModuleProvider="target"/>
+                <tableViewController title="RandomPair" id="3L3-YL-Kev" customClass="RandomPairTableViewController" customModule="PairRandomizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9Dn-uo-wrl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pair.list.cell.id" textLabel="CFd-3p-Ie8" detailTextLabel="huQ-tF-xg1" style="IBUITableViewCellStyleValue1" id="2iq-CR-3uE">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2iq-CR-3uE" id="ZMC-5n-mdW">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CFd-3p-Ie8">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="huQ-tF-xg1">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MSQ-EZ-QWM" id="PTM-WB-CNS"/>
+                            <outlet property="delegate" destination="3L3-YL-Kev" id="kGb-Vb-WVG"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Ie2-1T-nlJ"/>
+                        <barButtonItem title="Randomize" id="VIu-oN-HAz">
+                            <connections>
+                                <action selector="randomizePairings:" destination="3L3-YL-Kev" id="pZB-tf-OM5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="zb9-QI-n0s"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Random Pairing" id="AYc-ly-5uT">
+                        <barButtonItem key="rightBarButtonItem" title="Edit Students" id="gId-0w-Fay">
+                            <connections>
+                                <segue destination="oSn-f0-VOz" kind="show" id="Whp-6S-p2x"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="dataSource" destination="MSQ-EZ-QWM" id="acZ-JD-CBZ"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="681" y="355"/>
+        </scene>
+        <!--Student List-->
+        <scene sceneID="deE-tr-6Oz">
+            <objects>
+                <tableViewController title="Student List" id="oSn-f0-VOz" customClass="NameListTableViewController" customModule="PairRandomizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ylX-7O-Pta">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="name.list.cell.id" textLabel="a83-5w-ECV" style="IBUITableViewCellStyleDefault" id="V5s-fc-nuQ">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V5s-fc-nuQ" id="Lfg-bz-s56">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a83-5w-ECV">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Jjf-jy-uME" id="Nbn-6u-N5C"/>
+                            <outlet property="delegate" destination="oSn-f0-VOz" id="crY-Zp-mIF"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="JrG-Sn-7jl"/>
+                        <barButtonItem systemItem="add" id="FGZ-zX-YXw">
+                            <connections>
+                                <action selector="addStudent:" destination="oSn-f0-VOz" id="wbr-RK-lHX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="50A-s1-UJE"/>
+                    </toolbarItems>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NQg-Nd-dzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationBar contentMode="scaleToFill" id="Zpb-GR-2Xd">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <navigationItem title="Student List" id="7sL-Z8-heE"/>
+                    </items>
+                </navigationBar>
+                <customObject id="Jjf-jy-uME" customClass="NameListDataSource" customModule="PairRandomizer" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="1393" y="355"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ip4-a7-ugG">
+            <objects>
+                <navigationController id="c7A-Sg-CH1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QB1-1t-VKA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3L3-YL-Kev" kind="relationship" relationship="rootViewController" id="ECM-AC-0aS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jBR-7Z-ldM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-44" y="355"/>
+        </scene>
+    </scenes>
+</document>
